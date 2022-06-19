@@ -23,7 +23,7 @@ w10 = Wordlist(w01.commonwords(w00.words),"common")
 print(w10.title)
 w10.printwords(16)
 
-w11 = Wordlist(w01.uniquewords(w00.words),"unique 01 / 00 ")
+w11 = Wordlist(w01.uniquewords(w00.words),"unique w01 from w00 ")
 w11.printwords(16)
 
 w12 = Wordlist(w00.uniquewords(w01.words),"unique 00 from w01")
