@@ -13,6 +13,20 @@ class Wordlist:
           print("IOError: ",filename," File does not appear to exist.")
           return 0
 
+  def writewordfile(self, filename):
+      try:
+          with open(filename, "w") as fh:
+              fh.writelines('\n'.join(self.words))
+      except:
+          print("Error on open file for write")
+
+
+  def makelowercase(self):
+      wordlist = []
+      for w in self.words:
+          wordlist.append(w.lower())
+      return wordlist
+
   def commonwords(self, wordlist):
       commonlist = []
       for w in self.words:
