@@ -75,6 +75,7 @@ w350kmiss.printwords(16,32)
 
 
 '''
+# MERGING TWO WORD LISTS
 wmerge = Wordlist(w58k.words,"merged")
 wunique = Wordlist(w60k.uniquewords(w58k.words),"unique list")
 for w in wunique.words:
@@ -86,14 +87,3 @@ wsorted.printwords(16,1000)
 
 wsorted.writewordfile("sorted.txt")
 '''
-print('######## 350K compares ###############################################')
-'''
-w96 = Wordlist(w58k.uniquewords(w350k.words),"unique 58k from 350k")
-w96.printwords(20,60)
-
-w97 = Wordlist(w60k.uniquewords(w350k.words),"unique 60k from 350k")
-w97.printwords(20,60)
-'''
-
-
-
