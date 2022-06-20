@@ -32,22 +32,33 @@ class Wordlist:
               uniquelist.append(w)
       return uniquelist
 
+  def trimwords(self, trimlength):
+      trimlist = []
+      for w in self.words:
+          if len(w) == trimlength:
+              trimlist.append(w)
+      return trimlist
+
   def getWordcount(self):
       return len(self.words)
 
   def addword(self, word):
       self.words.append(word)
 
-  def printwords(self, numcols):
+  def printwords(self, numcols, maxwords):
       print("##########")
       print(self.title, " ", len(self.words), " Words" )
-      i=0
+      col=0
+      cnt = 0
 
       for w in self.words:
+          cnt = cnt + 1
           print(w, " ", end="")
-          i = i + 1
-          if i % numcols == 0:
+          col = col + 1
+          if col % numcols == 0:
             print("")
+          if cnt >= maxwords:
+              break
 
       print("")
 
