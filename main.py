@@ -40,7 +40,7 @@ w20k.printwords(16, 64)
 
 w58k = Wordlist(nulllist,"58K wordlist")
 w58k.readwordfile("english_58k_words.txt")
-#w58k = Wordlist(w58k.trimwords(5),"58K wordlist trimmed to 5 letter words")
+w58k = Wordlist(w58k.trimwords(5),"58K wordlist trimmed to 5 letter words")
 w58k.printwords(16, 64)
 
 w350k = Wordlist(nulllist,"350K wordlist")
@@ -48,18 +48,15 @@ w350k.readwordfile("english_350k_words.txt")
 w350k = Wordlist(w350k.trimwords(5),"350K wordlist trimmed to 5 letter words")
 w350k.printwords(16, 64)
 
-
 w60k = Wordlist(nulllist,"60K wordlist")
 w60k.readwordfile("english_60k_words.txt")
-#w60k = Wordlist(w60k.trimwords(5),"60K wordlist trimmed to 5 letter words")
+w60k = Wordlist(w60k.trimwords(5),"60K wordlist trimmed to 5 letter words")
 w60k.printwords(16, 64)
 
-wsorted = Wordlist(nulllist,"merge sorted wordlist")
-wsorted.readwordfile("sorted.txt")
-#w60k = Wordlist(w60k.trimwords(5),"60K wordlist trimmed to 5 letter words")
-wsorted.printwords(16, 64)
-
-
+w71k = Wordlist(nulllist,"71K word list")
+w71k.readwordfile("english_71k_words.txt")
+w71k = Wordlist(w71k.trimwords(5),"71K wordlist trimmed to 5 letter words")
+w71k.printwords(16, 64)
 
 ww = Wordlist(nulllist,"wordle wordlist")
 ww.readwordfile("wordlelist.txt")
@@ -69,20 +66,14 @@ ww.printwords(16, 64)
 
 
 print('########## COMPARES #############################################')
-'''
-w91 = Wordlist(ww.commonwords(w60k.words),"common wordle from 60k")
-w91.printwords(16,32)
 
-w92 = Wordlist(ww.uniquewords(w60k.words),"unique wordle from 60k ")
-w92.printwords(16,32)
+w71kmiss = Wordlist(ww.uniquewords(w71k.words),"wordle words missed from 71k ")
+w71kmiss.printwords(16,32)
+
+w350kmiss = Wordlist(ww.uniquewords(w350k.words),"wordle words missed from 350k ")
+w350kmiss.printwords(16,32)
 
 
-w91 = Wordlist(ww.commonwords(w58k.words),"common wordle from 58k")
-w91.printwords(16,32)
-
-w93 = Wordlist(ww.uniquewords(w58k.words),"unique wordle from 58k")
-w93.printwords(16,32)
-'''
 '''
 wmerge = Wordlist(w58k.words,"merged")
 wunique = Wordlist(w60k.uniquewords(w58k.words),"unique list")
