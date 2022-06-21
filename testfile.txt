@@ -1,6 +1,0 @@
-about
-baker
-couch
-deuce
-empty
-abcde
